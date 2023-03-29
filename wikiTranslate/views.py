@@ -5,6 +5,7 @@ from .utils import *
 from .forms import *
 from nltk import tokenize
 from django.views.decorators.csrf import csrf_exempt
+nltk.download('punkt')
 
 
 def index(request):
