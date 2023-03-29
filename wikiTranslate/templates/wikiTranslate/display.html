@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <title>Wiki Title Summary Translation</title>
+</head>
+{% load crispy_forms_tags %}
+<body>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <ul>
+    <li><a href="{% url 'wikiTranslate:home' %}">Home</a></li>
+    <li><a href="{% url 'wikiTranslate:project_list' %}">View all Projects List</a></li>
+  </ul>
+  <div ng-controller="headerCtrl">
+    <div class="container" style="background-color:white">
+      <h2 style="color:black; text-align:center" ><b>{{title}}</b></h2>
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-default"> 
+          <!--<div class="panel-heading">
+                      <h4 class="panel-title" style="text-align: center">
+
+
+                          <a>Add the Headers </a>
+                      </h4>
+                  </div>-->
+          
+          <div class="panel-body">
+           
+            <section>
+              
+              {% for sentence in sentences  %}
+              <div class="row">
+                <div class="col-xs-12">
+                  <form class="form-inline" style="">
+                    <div class="form-group" >
+                      <label for="currentmonth">{{ sentence.original_sentence }}</label>
+                    </div>
+                    <div class="form-group">
+                      <label for="currentmonth">{{ sentence.translated_sentence }}</label>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <br />
+              {% endfor %}
+            </section>
+            
+            
+          </div>
+        </div>
+      </div>
+      <div> </div>
+    </div>
+  </div>
+</body>
+</html>

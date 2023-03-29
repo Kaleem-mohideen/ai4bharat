@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "universal-valve-258717",
+  "private_key_id": "8b4de7072152eb8a586e995d80b3ab910d028345",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDQpnJ0KD/K4KSe\ngrN/f+Kxvmk7BJ4r/q1K6iGCo/viEZPulAsjV6xq/e5kfg+qBzLZNZ1bc7pM0+su\nkivUPd0daOYoCKnLTsjdiRs2TXpou6KUsAzWIRCTx/e+9P8m0sNIjcHbbs4Rizom\n/kJwW85QF6CAITZuY0WLHT317Q2pdhipsHkkgIehMTLJF9shEJViXMNCwRycCuzN\nDe25M8m8+NT0H7O6vrZx+topDfGjToHC05u3TjuLTCpt1YuQhQBD/MZZluR/lVRp\nhGwJqFTfrHDhTbEEt4B7LLZgr54Jf802oQBYr2X2POdA8ayTyhbnr0tR2TyGM2a/\nLYN26fxbAgMBAAECggEAV/rfhxhTseXgtFAThT81JVLPh4nOcmmsw8qO/8nK08wq\nry6wtaHp+6GAjNJVI5JugAWqCR523596a0RKg+/kFVsetaHVivt5GmUOWur3o0L/\nbqf/eakulsn6rwQatNGpc6YGqNMDxIULK9cJx9wGVmJoFK8shwaIE/1sG49uM9Zr\nx7QIopBnmF6G5hL5TmTtkNYcjEqyMAxN0vubDR5YiUC+/elE/GReMsdlrrkkzrqw\n0LOIYyyRgqO0JBw/A2LOs56PzunXOK2tR6a1eeSMYNBT/dkWkARSPZcwND0SQMa2\ngH/oZhAc/GwFE8ajCYD1q6263hwCB52roqBfKe8nDQKBgQDwYbTUPD+RHJ7YdIQS\nQq1s9rHuXjJNKNZ5YijzxJu0T/krqHYJ2u0EsVh5gRl3rfbbdF4MlZoLnf7eTXkw\nXwYu6l8imKoFb2ivT9b56ykJDYW06rPy+EJ7uj8OI4LqaUTSMgvo/c+KhDigLMo2\nFpPm9o1xf7Zf8RvHl5k7W+Y7ZQKBgQDeNPKYTr5FzdVLi2Dc3HVTFR04zIjbyq//\nm70GqJ0NYkciPfa9O+4lr/aV8LNQjhj4cK+H8hfSdnWjd5IxCYrXYtcOqGvTWoRm\nr+m7uTwPz7e4B3gbPch/K7LgMWEX0wrk8LnvKhFukCzGN35V8INsJV3zAFTIayrL\nn2Wc19g8vwKBgQDS7MkhWeRlTnnLcSHabAuFC0rB4IG+1tCrHgjVLXV62JnJRz6c\nEy/a6Eq8Ax33t/xeQFOuMy9CdlaHde+bFCZ20Ey+LLsznbh77FC0ZzZQrT7fqvpP\nfqvHqXteyqY7TjeHQUbWILAV2UNeuS6OG22YQkuGhgvfT8+SaWGZhmAVSQKBgEH1\nuaWYikaySQR5xTEKiBE3jUsU+/MygXgAxOW7G5OjfrYdaqbVqWWqjCoKH1BkPelR\nmeli5ctlupnhnpXL3Vj+UBRbzlYY4oCQ63L8E2YmJMUOAosjleaaFCkUv1uRHATF\nqIvkEvSc+42DX48nK/voQ7EkggZUOYnkMQeT0u6FAoGAT1VfIA2aqg+tr+pjMIkG\nsulDAPlfvfD7I2lyKaYkhoPCiksQdOx/sXSDAud5eFi11CmD6tjCacaNZPyKvZs4\nS2nVuXb60IcR05rsp5+nDWx9DTyaBAyoPSQ3JJHTDiD/mVNuA/qVqtYVoZZrL/hd\nUuwVT2cFydzkLnWYvfGegDc=\n-----END PRIVATE KEY-----\n",
+  "client_email": "testserviceaccount@universal-valve-258717.iam.gserviceaccount.com",
+  "client_id": "107173606425465937484",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/testserviceaccount%40universal-valve-258717.iam.gserviceaccount.com"
+}

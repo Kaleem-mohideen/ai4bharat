@@ -1,0 +1,24 @@
+<ul>
+    <li><a href="{% url 'wikiTranslate:home' %}">Home</a></li>
+</ul>
+{% block content %}
+    <h1>Project List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Project Id</th>
+                <th>Article Title</th>
+                <th>Need Translation In</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for project in projects %}
+                <tr>
+                    <td>{{ project.project_id }}</td>
+                    <td><a href="{% url 'wikiTranslate:display' project.project_id%}">{{ project.articleTitle }} </a></td>        
+                    <td>{{ project.target_lang }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

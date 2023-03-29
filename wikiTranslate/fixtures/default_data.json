@@ -1,0 +1,93 @@
+[
+	{
+		"model": "wikiTranslate.TargetLang",
+		"pk": 1,
+		"fields":{
+			"languages": "Bengali"
+		}
+	},
+	{
+		"model": "wikiTranslate.TargetLang",
+		"pk": 2,
+		"fields":{
+			"languages": "Gujarati"
+		}
+	},
+	{
+		"model": "wikiTranslate.TargetLang",
+		"pk": 3,
+		"fields":{
+			"languages": "Hindi"
+		}
+	},
+	{
+		"model": "wikiTranslate.TargetLang",
+		"pk": 4,
+		"fields":{
+			"languages": "Kannada"
+		}
+	},
+	{
+		"model": "wikiTranslate.TargetLang",
+		"pk": 5,
+		"fields":{
+			"languages": "Malayalam"
+		}
+	},
+	{
+		"model": "wikiTranslate.TargetLang",
+		"pk": 6,
+		"fields":{
+			"languages": "Marathi"
+		}
+	},
+	{
+		"model": "wikiTranslate.TargetLang",
+		"pk": 7,
+		"fields":{
+			"languages": "Nepali"
+		}
+	},
+	{
+		"model": "wikiTranslate.TargetLang",
+		"pk": 8,
+		"fields":{
+			"languages": "Oriya"
+		}
+	},
+	{
+		"model": "wikiTranslate.TargetLang",
+		"pk": 9,
+		"fields":{
+			"languages": "Panjabi"
+		}
+	},
+	{
+		"model": "wikiTranslate.TargetLang",
+		"pk": 10,
+		"fields":{
+			"languages": "Sinhala"
+		}
+	},
+	{
+		"model": "wikiTranslate.TargetLang",
+		"pk": 11,
+		"fields":{
+			"languages": "Tamil"
+		}
+	},
+	{
+		"model": "wikiTranslate.TargetLang",
+		"pk": 12,
+		"fields":{
+			"languages": "Telugu"
+		}
+	},
+	{
+		"model": "wikiTranslate.TargetLang",
+		"pk": 13,
+		"fields":{
+			"languages": "Urdu"
+		}
+	}
+]
