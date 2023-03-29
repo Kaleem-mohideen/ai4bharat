@@ -3,9 +3,10 @@ from django.http import HttpResponse
 from .models import *
 from .utils import *
 from .forms import *
-from nltk import tokenize
+import nltk
 from django.views.decorators.csrf import csrf_exempt
 nltk.download('punkt')
+from nltk import tokenize
 
 
 def index(request):
