@@ -14,6 +14,12 @@ from pathlib import Path
 import os
 import dj_database_url
 import environ
+import mimetypes
+
+mimetypes.add_type("text/javascript", ".js", True)
+mimetypes.init()
+mimetypes.types_map['.css'] = 'text/css'
+
 
 env = environ.Env()
 environ.Env.read_env()
