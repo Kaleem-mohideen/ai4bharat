@@ -2,9 +2,17 @@ from wikipediaapi import Wikipedia
 import six
 import os
 from google.cloud import translate_v2 as translate
-credential_path = r"googlekey.json"
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
-translate_client = translate.Client()
+import environ
+from google.oauth2 import service_account
+
+env = environ.Env()
+environ.Env.read_env()
+gcp_json_credentials_dict = env.json("google_key")
+credentials = service_account.Credentials.from_service_account_info(
+    gcp_json_credentials_dict)
+# credential_path = r"googlekey.json"
+# os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
+translate_client = translate.Client(credentials=credentials)
 
 
 
