@@ -18,8 +18,6 @@ translate_client = translate.Client(credentials=credentials)
 
 def get_summary(title):
 	intro = Wikipedia().page(title).summary
-	
-	# translate = Wikipedia(lang).page(title).summary
 	return intro
 
 def translate(text, lang):

@@ -19,7 +19,6 @@ class SentenceForm(forms.ModelForm):
             for key, value in self.fields[fieldname].error_messages.items():
                 self.fields[fieldname].required = False
 
-        # self.fields['email'].required = False
 
     class Meta: 
         model = Sentence 

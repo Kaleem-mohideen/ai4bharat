@@ -18,9 +18,35 @@ def index(request):
 def sentenceSplit(request):
 	if request.method == "POST":
 		form = ProjectForm(request.POST)
+		
 		if form.is_valid():
-			project = form.save()
-			project.refresh_from_db()
+			article_title = form.cleaned_data.get('articleTitle')
+			target_lng = form.cleaned_data.get('target_lang')
+
+			if not Project.objects.filter(articleTitle=article_title, target_lang=target_lng).exists():
+				project = form.save()
+				project.refresh_from_db()
+
+			else:
+				try:
+					project = Project.objects.get(articleTitle=article_title, target_lang=target_lng)
+					
+				except Project.DoesNotExist:
+					project = None
+					
+				
+		else:
+			article_title = form.cleaned_data.get('articleTitle')
+			target_lng = form.cleaned_data.get('target_lang')
+
+			try:
+				project = Project.objects.get(articleTitle=article_title, target_lang=target_lng)
+				
+			except Project.DoesNotExist:
+				project = None
+				
+			
+			
 			summary = get_summary(project.articleTitle)
 			sentences = tokenize.sent_tokenize(summary)
 			lang = {'Bengali': 'bn', 'Gujarati':'gu', 'Hindi':'hi', 'Kannada':'kn', 'Malayalam':'ml', 'Marathi':'mr', 'Nepali': 'ne', 'Oriya':'or', 'Panjabi':'pa', 'Sinhala':'si', 'Tamil': 'ta', 'Telugu': 'te', 'Urdu': 'ur'}
@@ -38,9 +64,9 @@ def display(request, pid):
 	if request.method == "POST":
 		sentences = Sentence.objects.filter(project_id= projectObj).order_by('sentence_id')
 		for sentence in sentences:
-			# print('sentencesEach', request.POST[f'translated_text{sentence.sentence_id}'])
+			
 			sentence, created = Sentence.objects.get_or_create(project_id = projectObj, sentence_id = sentence.sentence_id, original_sentence=sentence.original_sentence)
-			print(sentence)
+
 			sentence.translated_sentence = request.POST[f'translated_text{sentence.sentence_id}']
 			sentence.save()
 	sentences = Sentence.objects.filter(project_id= projectObj).order_by('sentence_id')

@@ -16,15 +16,7 @@
     <div class="container" style="background-color:white">
       <h2 style="color:black; text-align:center" ><b>{{project.articleTitle}}</b></h2>
       <div class="panel-group" id="accordion">
-        <div class="panel panel-default"> 
-          <!--<div class="panel-heading">
-                      <h4 class="panel-title" style="text-align: center">
-
-
-                          <a>Add the Headers </a>
-                      </h4>
-                  </div>-->
-          
+        <div class="panel panel-default">           
           <div class="panel-body">
             <form id="sentence_form" method="POST" action="{% url 'wikiTranslate:display' project.project_id%}">
             <section>

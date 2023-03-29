@@ -13,6 +13,9 @@ class Project(models.Model):
 	articleTitle = models.CharField(max_length=500, null=False)
 	target_lang = models.ForeignKey(TargetLang, on_delete=models.SET_NULL, null=True, verbose_name='Target Language')
 
+
+	class Meta:
+		unique_together = (("articleTitle","target_lang"),)
 	def __str__(self):
 		return str(self.project_id)
 
