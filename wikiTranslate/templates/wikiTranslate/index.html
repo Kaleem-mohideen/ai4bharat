@@ -9,13 +9,20 @@
 {% load crispy_forms_tags %}
 
 <body>
-  <form id="project_form" method="POST" action="{% url 'wikiTranslate:sentenceSplit' %}">
-    {% csrf_token %}
-    <div class="form-group">
-      {{ form|crispy }}
-      
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+  <ul>
+    <li><a href="{% url 'wikiTranslate:project_list' %}">View all Projects List</a>
+      <br>
+      <br>    
+      <form id="project_form" method="POST" action="{% url 'wikiTranslate:sentenceSplit' %}">
+        {% csrf_token %}
+        <div class="form-group">
+          {{ form|crispy }}
+          
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </li>
+  </ul>
 </body>
 </html>

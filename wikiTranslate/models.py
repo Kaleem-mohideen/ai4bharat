@@ -14,8 +14,8 @@ class Project(models.Model):
 	target_lang = models.ForeignKey(TargetLang, on_delete=models.SET_NULL, null=True, verbose_name='Target Language')
 
 
-	class Meta:
-		unique_together = (("articleTitle","target_lang"),)
+	# class Meta:
+	# 	unique_together = (("articleTitle","target_lang"),)
 	def __str__(self):
 		return str(self.project_id)
 
