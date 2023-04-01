@@ -21,27 +21,34 @@ def sentenceSplit(request):
 		
 		if form.is_valid():
 			article_title = form.cleaned_data.get('articleTitle')
-			target_lng = form.cleaned_data.get('target_lang')
+			
+			if form.cleaned_data.get('target_lang'):
+				target_lng = form.cleaned_data.get('target_lang')
+			else:
+				targetlangobj = TargetLang.objects.get(languages = form.data['target_lang'])
+				target_lng = targetlangobj.pk
 
 			if not Project.objects.filter(articleTitle=article_title, target_lang=target_lng).exists():
 				project = form.save()
 				project.refresh_from_db()
-				print('entered not exist')
 
 			else:
-				print('entered exist')
 				try:
 					project = Project.objects.get(articleTitle=article_title, target_lang=target_lng)
-					
+
 				except Project.DoesNotExist:
 					project = None
+
 					
 				
 		else:
-			print('entered not valid')
 			article_title = form.cleaned_data.get('articleTitle')
-			target_lng = form.cleaned_data.get('target_lang')
-
+			
+			if form.cleaned_data.get('target_lang'):
+				target_lng = form.cleaned_data.get('target_lang')
+			else:
+				targetlangobj = TargetLang.objects.get(languages = form.data['target_lang'])
+				target_lng = targetlangobj.pk
 			try:
 				project = Project.objects.get(articleTitle=article_title, target_lang=target_lng)
 				
@@ -55,10 +62,12 @@ def sentenceSplit(request):
 		lang = {'Bengali': 'bn', 'Gujarati':'gu', 'Hindi':'hi', 'Kannada':'kn', 'Malayalam':'ml', 'Marathi':'mr', 'Nepali': 'ne', 'Oriya':'or', 'Panjabi':'pa', 'Sinhala':'si', 'Tamil': 'ta', 'Telugu': 'te', 'Urdu': 'ur'}
 		tar_lang= lang[project.target_lang.languages]
 		for each_sentence in sentences:
-			translation = translate(each_sentence, tar_lang)
-			sentenceobj, created = Sentence.objects.get_or_create(project_id=project, original_sentence=each_sentence, translated_sentence=translation)
+			if not Sentence.objects.filter(project_id=project, original_sentence=each_sentence).exists():
+				translation = translate(each_sentence, tar_lang)
+				sentenceobj, created = Sentence.objects.get_or_create(project_id=project, original_sentence=each_sentence, translated_sentence=translation)
 
 		sentences = Sentence.objects.filter(project_id= project).order_by('sentence_id')
+		
 	return render(request, 'wikiTranslate/sentenceSplit.html', {'project':project, 'sentences':sentences})
 
 @csrf_exempt
